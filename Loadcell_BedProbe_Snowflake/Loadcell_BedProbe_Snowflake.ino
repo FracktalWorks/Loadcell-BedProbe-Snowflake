@@ -22,8 +22,8 @@ bool dir, prevDir;
 //Settings
 //-------------------------------------------------------------------------------------
 
-#define LOWERTHRESHOLD 10
-#define UPPERTHRESHOLD 25
+#define LOWERTHRESHOLD 45
+#define UPPERTHRESHOLD 55
 #define DIR_PIN 1
 #define TRIGGER_PIN 7
 #define TARE_PIN 8
@@ -152,7 +152,7 @@ void loop()
       LoadCell.update();
 //      Serial.print(LoadCell.getData());
 
-      val = (-1)* LoadCell.getData();
+      val = LoadCell.getData();
       Serial.print(val);
 
       if (val >= LOWERTHRESHOLD && val < UPPERTHRESHOLD)
